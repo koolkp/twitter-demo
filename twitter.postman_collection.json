@@ -1,0 +1,209 @@
+{
+	"variables": [],
+	"info": {
+		"name": "twitter",
+		"_postman_id": "f641f8ca-604e-63fb-73aa-c9d33b2b582c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{host}}/search/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{host}}/search/?q=amitabh",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "amitabh",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"user_mentions\",\n\t\t\t\"value\": \"Ranbir\",\n\t\t\t\"filter_type\": \"start_with\"\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"user_mentions\",\n\t\t\t\"value\": \"Ranbir\",\n\t\t\t\"filter_type\": \"start_with\"\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"screen_name\",\n\t\t\t\"value\": \"Catestyy\",\n\t\t\t\"filter_type\": \"start_with\"\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"followers_count\",\n\t\t\t\"value\": 1000,\n\t\t\t\"filter_type\": \"gt\"\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"followers_count\",\n\t\t\t\"value\": 10000,\n\t\t\t\"filter_type\": \"gt\"\n\t\t},\n\t\t{\n\t\t\t\"column\": \"user_mentions\",\n\t\t\t\"value\": \"Dilip\",\n\t\t\t\"filter_type\": \"start_with\"\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"text\",\n\t\t\t\"value\": \"Social media\"\n\t\t},\n\t\t{\n\t\t\t\"column\": \"created_at\",\n\t\t\t\"value\": [\"03-02-2017 01:00:30\", \"04-05-2018 21:00:30\"]\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"text\",\n\t\t\t\"value\": \"Social media\"\n\t\t},\n\t\t{\n\t\t\t\"column\": \"created_at\",\n\t\t\t\"value\": [\"03-02-2017 01:00:30\", \"04-05-2018 21:00:30\"]\n\t\t}\n\t],\n\t\"sort_by\": [\n\t\t{\n\t\t\t\"created_at\": 1\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/filter/ 7",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"text\",\n\t\t\t\"value\": \"Social media\"\n\t\t}\n\t],\n\t\"sort_by\": [\n\t\t{\n\t\t\t\"column\": \"screen_name\",\n\t\t\t\"order\" :1\n\t\t}\n\t]\n}"
+				},
+				"url": "{{host}}/filter/",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/export/ 8",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filters\": [\n\t\t{\n\t\t\t\"column\": \"text\",\n\t\t\t\"value\": \"Social media\"\n\t\t}\n\t],\n\t\"sort_by\": [\n\t\t{\n\t\t\t\"column\": \"screen_name\",\n\t\t\t\"order\" :-1\n\t\t}\n\t],\n\t\"export_columns\": [\"screen_name\", \"text\"]\n}"
+				},
+				"url": "{{host}}/export/",
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
