@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', views.search, name='search'),
     path('filter/', views.filter, name='filter'),
-    path('export/', views.export_filter, name='export_filter')
+    path('export/', views.export_filter, name='export_filter'),
+    path('metadata/', views.metadata, name='filter'),
 ]

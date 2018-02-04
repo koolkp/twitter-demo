@@ -79,5 +79,11 @@ def export_filter(request):
     for data in response:
         data['created_at'] = data['created_at'].strftime(QUERY_DATE_FORMAT)
         del data['_id']
-    export_columns = filter_request.get('export_columns', []) 
+    export_columns = filter_request.get('export_columns', [])
     return export(response, export_columns)
+
+
+def metadata(request):
+    response = data_service.get_all_metadata()
+    return HttpResponse(dumps(response), content_type='application/json')
+

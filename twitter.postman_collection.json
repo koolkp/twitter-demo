@@ -204,6 +204,17 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "{{host}}/metadata/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "{{host}}/metadata/",
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

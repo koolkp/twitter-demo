@@ -67,3 +67,25 @@ class DataService(object):
 
     def save(self, row):
         self.mongo_client.save(row)
+
+    def get_all_metadata(self):
+        response = []
+        for column in self.filter_client.text_filters:
+            text_filter = {
+                "column": column,
+                "filter_type": self.filter_client.text_filter_obj.valid_types
+            }
+            response.append(text_filter)
+        for column in self.filter_client.number_filters:
+            text_filter = {
+                "column": column,
+                "filter_type": self.filter_client.number_filter_obj.valid_types
+            }
+            response.append(text_filter)
+        for column in self.filter_client.date_range_filters:
+            text_filter = {
+                "column": column,
+                "filter_type": [QUERY_DATE_FORMAT, QUERY_DATE_FORMAT]
+            }
+            response.append(text_filter)
+        return response

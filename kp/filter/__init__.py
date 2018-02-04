@@ -20,12 +20,15 @@ class Filter(object):
                              'urls.expanded_url', 'urls.display_url']
         self.number_filters = ['retweet_count', 'favorite_count', 'followers_count']
         self.date_range_filters = ['created_at']
+        self.text_filter_obj = TextFilter()
+        self.number_filter_obj = NumberFilter()
+        self.date_range_filter_obj = RangeFilter()
         self.query = {}
 
     def get_filter(self, column, value, filter_type):
         if column in self.text_filters:
-            return TextFilter().get_filter(column, value, filter_type)
+            return self.text_filter_obj.get_filter(column, value, filter_type)
         if column in self.number_filters:
-            return NumberFilter().get_filter(column, value, filter_type)
+            return self.number_filter_obj.get_filter(column, value, filter_type)
         if column in self.date_range_filters:
-            return RangeFilter().get_filter(column, value, filter_type)
+            return self.date_range_filter_obj.get_filter(column, value, filter_type)
