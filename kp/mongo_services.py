@@ -22,7 +22,7 @@ class MongoService(object):
         self.db.tweets.insert_one(row)
 
     def get_data(self, query, sort_by=None):
-        if sort_by is None:
+        if sort_by is None or len(sort_by) == 0:
             return list(self.db.tweets.find(query))
         else:
             return list(self.db.tweets.find(query).sort(sort_by))
